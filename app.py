@@ -29,4 +29,4 @@ def get_message(uuid):
         return jsonify({})
 
 if __name__ == '__main__':
-    app.run(host="localhost", port=3006, debug=True)
+    app.run(host="localhost", port=3005, debug=True)
