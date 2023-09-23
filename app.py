@@ -13,6 +13,16 @@ def post_message(uuid):
     allData[uuid] = request.json
     return jsonify({"success":True})
 
+
+@app.route('/post_message/<uuid>/<uuid2>', methods=['POST'])
+def post_message_in_set(uuid,uuid2):
+    print("post_message2")
+    print(uuid,uuid2)
+    if(uuid not in allData):
+        allData[uuid] = {}
+    allData[uuid][uuid2] = request.json
+    return jsonify({"success":True})
+
 @app.route('/append_message/<uuid>', methods=['POST'])
 def append_message(uuid):
     print("append_message")
